@@ -12,15 +12,14 @@ let input = getargs.getIntegerArg()
 // test that input is a number and exit with error
 
 if (isNaN(input)) {
-
   console.log("Please run this program with a positive number to find all the integers divisible by 3 or 5 counting up to the entered number")
 }
 else {
   // iterate from 1 to the value of input
-
   for (i = 1; i <= input; i++) {
 
     // test if divisible by 3,5, and 15 to create desired output
+    /*
     if ((i % 3 == 0) && (i % 5 == 0)) {
       console.log(`${i} fizzbuzz`);
     } else if (i % 3 == 0) {
@@ -30,7 +29,18 @@ else {
     } else {
       console.log(`${i}`);
     }
+*/
+    //stretch goal
 
+    let output = "";
+    if (i % 3 == 0) {
+      output = "fizz";
+    }
+    if (i % 5 == 0) {
+      output = output + "buzz";
+    }
+
+    console.log(`${i} ${output}`);
   }
 }
 

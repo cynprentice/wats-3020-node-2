@@ -12,14 +12,14 @@ let input = getargs.getStringArg()
 
 
 //test that it is a string
-//TODO check for string argument and if no string is entered provide a usage statement and quit
-
-if (typeof(input) !== "string") {
-    console.log ("Enter a string to return the string reversed")
+if (typeof (input) !== "string") {
+    console.log("Enter a string to return the string reversed")
 }
 else {
     // uses string methods to reverse the string
+    console.time("String Function Reverse");
     console.log(input.split('').reverse().join(''));
+    console.timeEnd("String Function Reverse");
 }
 
 

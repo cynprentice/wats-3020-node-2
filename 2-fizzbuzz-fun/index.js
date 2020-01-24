@@ -11,7 +11,7 @@ let input = getargs.getIntegerArg()
 
 
 function fizzbuzz(n) {
-  // TODO provide for tests for divisible for 3,5, and 15 to return desired output
+
   if ((n % 3 == 0) && (n % 5 == 0)) {
     //console.log(`${n} fizzbuzz`);
     return "fizzbuzz";
@@ -25,14 +25,10 @@ function fizzbuzz(n) {
     console.log(`${n}`);
   }
 }
-
-// TODO check if input is not an integer
 if (isNaN(input)) {
-
   console.log("Please run this program with a positive number to find all the integers divisible by 3 or 5 counting up to the entered number")
 }
 else {
-  // TODO provide info to for loop to iterate from 1 to value of input
   for (i = 1; i <= input; i++) {
     console.log(`${i} ${fizzbuzz(i)}`);
   }

@@ -9,9 +9,7 @@ Usage: Enter a string to get a count of each character in the string
 const getargs = require("../modules/getargs")
 let input = getargs.getStringArg()
 
-
 //test that it is a string
-
 if (typeof (input) !== "string") {
   console.log("Enter a string to get a count of each character in the string")
 }
@@ -47,7 +45,7 @@ else {
   //console.log(charArr);
   
   
-  //Sort alphabetically by character (not in the instructions but I felt like it should be alphabetized)
+  //Sort alphabetically by character 
   
 // console.log("charArr  after character alphabetization is ")
   charArr.sort(function(a, b){
