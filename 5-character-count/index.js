@@ -1,9 +1,8 @@
-//TODO fill in comment template
 /*
-Description:
-Input:
-Output:
-Usage: 
+Description: a program that takes a string as input and counts how many of each character are in that string.
+Input: string
+Output: character counts of the string  
+Usage: Enter a string to get a count of each character in the string
 */
 
 // get input using getargs
@@ -12,26 +11,65 @@ let input = getargs.getStringArg()
 
 
 //test that it is a string
-//TODO check for string argument and if no string is entered provide a usage statement and quit
-if ( ) {
-  // TODO provide a usage statement
+
+if (typeof (input) !== "string") {
+  console.log("Enter a string to get a count of each character in the string")
 }
 else {
-  // TODO initialize charCount object to count characters
-  // TODO turn the input into an array called characters using the split method
-  
-  // TODO iterate through array to create object that has character for key and count for value
-  
-  // TODO initialize a new array called charArr
-  // TODO loop through every character in charCount 
-  for ( ) {
-    let newElem = {char:character, count:charCount[character]};
-    // TODO add newElem to charArr using the push method
+
+  let charCount = {};
+  let characters = input.split("");
+  //console.log("characters initialized as " + characters);
+
+
+  for (let character of characters) {
+    if (charCount[character]) {
+      charCount[character]++;
+
+    } else {
+      charCount[character] = 1;
+    }
+    //console.log("charCount of " + character + " is " + charCount[character]);
   }
+ // console.log("charCount is ")
+ // console.log(charCount)
 
-  // TODO use the sort method of charArr with a custom compare function to sort the array by the count values (least to greatest)
+  let charArr = [];
 
-  // TODO output the content of the array to the console, showing each character and the count
+  for (let character in charCount) {
+    //  console.log("Looping through charCount character: " + character);
+    let newElem = { char: character, count: charCount[character] };
+
+    charArr.push(newElem);
+
+  }
+  //console.log("charArr is ")
+  //console.log(charArr);
   
+  
+  //Sort alphabetically by character (not in the instructions but I felt like it should be alphabetized)
+  
+// console.log("charArr  after character alphabetization is ")
+  charArr.sort(function(a, b){
+    var x = a.char.toLowerCase();
+    var y = b.char.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+  });
+
+  
+  charArr.sort(function (a, b) {
+    return a.count - b.count
+  })
+  //console.log("charArr  after count sort is ")
+ // console.log(charArr);
+
+  for (let i = 0; i < charArr.length; i ++) {
+    console.log(`${charArr[i].char}: ${charArr[i].count}`)
+
+  }
+  
+
 }
 
